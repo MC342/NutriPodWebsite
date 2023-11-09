@@ -1,0 +1,1324 @@
+/* IMPORTS */
+@font-face{
+    font-family: Jaldi;
+    src: url(fonts/Jaldi/Jaldi-Regular.ttf);
+}
+
+/*#### GLOBAL STYLING ####*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Implemenets smooth scrolling */
+    font-family: jaldi;
+}
+
+/* Colour Variables */
+:root{
+    --BGColour: rgb(187, 219, 253);
+    --BorderColour: rgb(0, 76, 163);
+    --ElementBackgroundColour: white;
+    --TitleFontColour: #6C9659;
+
+    --SecondaryElementBackgroundColour: rgb(224, 239, 255);
+    --SecondaryBorderColour: rgb(0, 119, 255);
+
+    --CustomizationColourWhite: white;
+    --CustomizationColourGrey: grey;
+    --CustomizationColourRed: rgb(243, 74, 74);
+    --CustomizationColourGreen: rgb(63, 143, 63);
+}
+
+/* Sets global font and background colour */
+body {
+    font-family: Jaldi;
+    background-color: var(--BGColour);
+}
+
+
+
+
+/*#### WEBSITE STYLING ####*/
+
+/*### General Website Elements ###*/
+main{
+    display: flex;
+}
+
+.WebsitePage, #MainSection, #ProductSection{
+    width: calc(100vw - 25px);
+    margin: 0;
+}
+
+.WebsitePage {
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Navigation */
+nav, .WhiteButton{
+    position: absolute;
+
+    background-color: var(--ElementBackgroundColour);
+
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 20px;
+    border-color: var(--BorderColour);
+
+    transition: 0.3s;
+}
+
+.LeftNav, .RightNav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 30vh;
+    width: 4vw;
+}
+
+.LeftNav h2, .RightNav h2{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: -18px;
+}
+
+.LeftNav h2{
+    transform: translateX(-20%) translateY(-4%);
+}
+
+.RightNav h2{
+    transform: translateX(20%);
+    letter-spacing: -15px;
+}
+
+nav h2, .WhiteButton h4{
+    color: var(--BorderColour);
+    text-align: center;
+}
+
+.LeftNav{
+    left: -1.2%;
+    align-items: start;
+}
+
+.RightNav{
+    right: -1.2%;
+    align-items: baseline;
+}
+
+.WhiteButton{
+    height: 8vh;
+    width: 20vw;
+}
+
+.WhiteButton{
+    position: absolute;
+
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 4vh;
+}
+
+.BottomArrow{
+    position: absolute;
+
+    height: 8vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    bottom: 5%;
+    right: 7%;
+}
+
+.BottomArrow img{
+    height: 100%;
+}
+
+sl-progress-ring{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    
+    --size: 80px;
+    --track-width: 5px;
+    --indicator-width: 8px;
+}
+
+
+/* Nav hover animations */
+nav:hover, .WhiteButton:hover{
+    background-color: var(--SecondaryElementBackgroundColour);
+    border-color: var(--SecondaryBorderColour);
+}
+
+
+/* Titles */
+.TitleContainer{
+    height: 11vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.TitleContainer h1{
+    margin: 0;
+    font-size: 6vh;
+    color: var(--BorderColour);
+}
+
+.TitleLine{
+    width: 100%;
+    height: 5px;
+    
+    border-radius: 5px;
+
+    background-color: var(--BorderColour);
+    margin: 0;
+}
+
+sl-divider{
+    --width: 5px;
+    --color: var(--BorderColour);
+}
+
+
+
+
+/* ##### ABOUT SECTION ##### */
+#AboutPage{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1%;
+}
+
+
+/* About Logo */
+#AboutLogoContainer{
+    height: 70%; /* Size of logo */
+    width: 50%;
+
+    text-align: center;
+}
+
+#AboutLogoContainer img{
+    height: 100%;
+}
+
+
+/* About Information */
+#AboutInformationContainer{
+    width: 50%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transform: translateX(-10%);
+}
+
+#AboutInformationText{
+    height: 65%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#AboutInformationText p{
+    font-size: 3.5vh;
+}
+
+#AboutInformationText span{
+    font-weight: bolder;
+}
+
+
+/* Infographics */
+#AboutInformationInfographics{
+    height: 35%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutInfographic{
+    width: 32%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#AboutInfographic1 img{
+    width: 70%;
+}
+
+#AboutInfographic2 img, #AboutInfographic3 img{
+    width: 80%;
+
+    transform: translateY(12%);
+}
+
+.AboutInfographic h3{
+    font-size: 3.5vh;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+
+
+
+
+
+/* ##### MAIN SECTION ##### */
+#MainSection{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/*### TITLE PAGE ###*/
+#TitlePage{
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+}
+
+#TitleRightNav h2{
+    letter-spacing: -18px;
+    transform: translateY(-4%);
+}
+
+#TitlePageContent{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#TitlePageLogo h1{
+    height: 30%;
+
+    margin: 0;
+
+    font-size: 7rem;
+    color: var(--TitleFontColour);
+}
+
+#ScrollImageContainer{
+    position: absolute;
+    
+    height: 12vh;
+
+    right: 3%;
+    bottom: 3%;
+}
+
+#ScrollImageContainer img{
+    height: 100%;
+}
+
+
+/* Title Logo */
+#TitlePageLogo{
+    height: 60%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+#TitleLogoImageContainer{
+    height: 100%;
+    margin: 0;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#TitleLogoImageContainer svg{
+    overflow: visible;
+    height: 100%;
+}
+
+
+
+
+/*### THE PRODUCT PAGE ###*/
+#TheProduct{
+    height: 100vh;
+    width: 100%;
+}
+
+#TheProductPageContent{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* The Product Center Content */
+#TheProductPageCenterContent{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#NutriPodProductPreview{
+    height: 65%;
+    width: 100%;
+
+    margin-bottom: 5%;
+
+    background-color: var(--BGColour);
+
+    border-radius: 50px;
+    border-style: solid;
+    border-color: var(--BorderColour);
+    border-width: 8px;
+}
+
+.splide__track{
+    height: 100%;
+}
+
+.splide__list{
+    height: 100%;
+}
+
+.splide__slide{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splide__slide img{
+    height: 90%;
+}
+
+
+
+/* The Product Drop-Up Boxes */
+.ProductDropUpBox{
+    position: absolute;
+    
+    height: 40vh;
+
+    background-color: var(--ElementBackgroundColour);
+    border-color: var(--BorderColour);
+    border-style: solid;
+    border-radius: 20px;
+
+    transform: translateY(80%);
+    transition: 0.5s;
+}
+
+.ProductDropUpBoxTopBar{
+    height: 10%;
+    width: 100%;
+}
+
+.DropUpBoxButtonContainer{
+    position: absolute;
+
+    height: 4vh;
+
+    right: 5%;
+    top: 5%;
+}
+
+.DropUpBoxButtonContainer img{
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+.DropUpBoxButtonContainer img:hover{
+    opacity: 60%;
+}
+
+#DropUpBoxDownButtonLeft, #DropUpBoxDownButtonRight{
+    display: none;
+}
+
+.ProductDropUpBoxTopBar h3{
+    font-weight: bolder;
+    font-size: 3vh;
+    text-align: center;
+
+    margin-top: 4%;
+}
+
+#ProductLeftDropUpBox{
+    width: 20%;
+
+    left: 5%;
+    bottom: 0;
+}
+
+#ProductLeftDropUpBox p{
+    text-align: left;
+    font-size: 2vh;
+
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#ProductRightDropUpBox{
+    width: 30%;
+
+    right: 5%;
+    bottom: 0;
+}
+
+#ProductRightDropUpBoxContentContainer{
+    display: flex;
+    justify-content: space-between;
+
+    align-items: start;
+
+    width: 94%;
+
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5%;
+}
+
+.ProductRightDropUpBoxContent{
+    width: 23%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProductRightDropUpBoxContent img{
+   width: 60%;
+   margin-bottom: 10%;
+}
+
+#ProductRightDropUpBoxContent2{
+    transform: translateY(13%);
+}
+
+#ProductRightDropUpBoxContent2 img{
+    width: 70%;
+}
+
+#ProductRightDropUpBoxContent4{
+    transform: translateY(10%);
+}
+
+.ProductRightDropUpBoxContent h3, h4{
+    margin: 0;
+    text-align: center;
+}
+
+.ProductRightDropUpBoxContent h3{
+    font-size: 2vh;
+}
+
+.ProductRightDropUpBoxContent h4{
+    font-size: 1.2vh;
+}
+
+#ProductRightDropUpBoxContent1Text1, #ProductRightDropUpBoxContent2Text1{
+    margin-bottom: 6%;
+}
+
+
+
+
+/*### FOOTER ###*/
+footer{
+    width: 100%;
+    height: 40vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--BorderColour);
+}
+
+
+/* Footer Input Form */
+.FooterLeftInputContainer{
+    height: 80%;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 3%;
+}
+
+.ContactInput{
+    width: 100%;
+
+    font-family: jaldi;
+
+    border-radius: 7px;
+    border-style: none;
+
+    background-color: var(--ElementBackgroundColour);
+
+    margin-top: 2%;
+}
+
+#ContactInputMessage{
+    height: 50%;
+    
+    resize: none;
+}
+
+sl-checkbox{
+    color: var(--ElementBackgroundColour);
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+#ContactSubmit{
+    height: 14%;
+    width: 30%;
+
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--ElementBackgroundColour);
+    border-width: 3px;
+
+    background-color: var(--BorderColour);
+    color: var(--ElementBackgroundColour);
+    font-weight: bolder;
+
+    transition: 0.5s;
+}
+
+#ContactSubmit:hover{
+    background-color: var(--ElementBackgroundColour);
+    color: var(--BorderColour);
+}
+
+
+/* Footer Title */
+#FooterTitleContainer{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#FooterTitleContainer h1{
+    color: var(--ElementBackgroundColour);
+}
+
+#FooterTitle .TitleLine{
+    background-color: var(--ElementBackgroundColour);
+}
+
+
+/* Footer Social Media */
+.FooterSocialMediaContainer{
+    height: 100%;
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 3%;
+}
+
+#FooterSocialMediaLogo{
+    height: 40%;
+
+    text-align: center;
+}
+
+#FooterSocialMediaLogo img{
+    height: 100%;
+}
+
+#FooterSocialMediaLinks{
+    width: 100%;
+    height: 22%;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5%;
+}
+
+.FooterSocialMediaLink {
+    height: 100%;
+}
+
+.FooterSocialMediaLink img{
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+.FooterSocialMediaLink img:hover{
+    opacity: 40%;
+}
+
+
+
+
+
+
+/* ##### PURCHASE SECTION ##### */
+#ProductSection{
+    height: 300vh;
+
+    transform: translateY(100vh);
+    
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+/*### INSPECT PAGE ###*/
+#InspectTitleContainer{
+    position: absolute;
+
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#NutriPodInspectContainer{
+    height: 70%;
+    width: 40%;
+
+    position: absolute;
+
+    left: 50%;
+    top: 5%;
+
+    transform: translateX(-50%);
+}
+
+#NutriPodModel{
+    height: 100%;
+    width: 100%;
+}
+
+#NutriPodModel iframe{
+    height: 100%;
+    width: 100%;
+
+    border-style: none;
+}
+
+
+
+
+/*### CUSTOMISE PAGE ###*/
+#CustomizeTitleContainer{
+    position: absolute;
+    
+    left: 25%;
+    bottom: 5%;
+}
+
+/* Cutomize Preview */
+#NutriPodCustomizePreview{
+    height: 75%;
+
+    left: 25%;
+    top: 5%;
+    
+    position: absolute;
+}
+
+#NutriPodCustomizePreview img{
+    height: 100%;
+
+    opacity: 0;
+
+    z-index: 999;
+    position: absolute;
+
+    transition: 1s;
+}
+
+.CustomImageOn{
+    opacity: 1 !important;
+}
+
+
+/* Customize Selections */
+#NutriPodCustomizationButtons{
+    height: 80%;
+    width: 25%;
+
+    position: absolute;
+
+    right: 3%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#CustomizationButtonsContainer{
+    height: 90%;
+    width: 80%;
+
+    transform: translateX(-5%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ColourButton{
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+
+    background-color: var(--BGColour);
+
+    transition: 1s;
+}
+
+.ColourButton1On{
+    background-color: var(--CustomizationColourWhite);
+}
+
+.ColourButton2On{
+    background-color: var(--CustomizationColourGrey);
+}
+
+.ColourButton3On{
+    background-color: var(--CustomizationColourRed);
+}
+
+.ColourButton4On{
+    background-color: var(--CustomizationColourGreen);
+}
+
+.ColourButton h4{
+    font-size: 5vh;
+    color: black;
+
+    transition: 1s;
+}
+
+
+
+/*### ORDER PAGE ###*/
+#OrderPageContent{
+    height: 80%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PurchaseContent{
+    position: relative;
+
+    height: 100%;
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+#PurchaseTitleContainer{
+    position: absolute;
+
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Left Content */
+#NutriPodPurchasePreview{
+    height: 75%;
+}
+
+#NutriPodPurchasePreview img{
+    height: 100%;
+}
+
+
+/* Right Content */
+#NutriLocationImageContainer{
+    height: 45%;
+}
+
+#NutriLocationImageContainer img{
+    height: 100%;
+}
+
+#GreyPurchaseImage, #RedPurchaseImage, #GreenPurchaseImage{
+    display: none;
+}
+
+
+
+
+
+
+/* ===== MOBILE LAYOUT ===== */
+@media only screen and (max-width: 360px) { 
+    /*### General Website Elements ###*/
+    .WebsitePage, #MainSection, #ProductSection{
+        width: calc(100vw - 25px);
+    }
+
+
+    /* Navigation */
+    .LeftNav, .RightNav{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        top: 5%;
+        transform: translateY(-50%);
+
+        height: 8vh;
+        width: 28vw;
+    }
+
+    .LeftNav h2, .RightNav h2{
+        writing-mode: horizontal-tb;
+        text-orientation: sideways;
+        letter-spacing: 0px;
+
+        position: absolute;
+
+        text-wrap: nowrap;
+    }
+
+    .LeftNav h2{
+        left: 50%;
+        transform: translateX(-50%) translateY(-4%);
+    }
+
+    .RightNav h2{
+        left: 50%;
+        transform: translateX(-50%) translateY(-4%);
+        letter-spacing: 0px;
+    }
+
+    .LeftNav{
+        left: 2%;
+        align-items: start;
+    }
+
+    .RightNav{
+        right: 2%;
+        align-items: start;
+    }
+
+    .WhiteButton{
+        height: 8vh;
+        width: 40vw;
+    }
+
+    .WhiteButton{
+        font-size: 3vh;
+    }
+
+    .BottomArrow{
+        height: 8vh;
+
+        bottom: 5%;
+        right: 7%;
+    }
+
+    sl-progress-ring{
+        display: none;
+    }
+
+
+    /* Titles */
+    .TitleContainer{
+        height: 11vh;
+        width: 80vw;
+    }
+
+    .TitleContainer h1{
+        margin: 0;
+        font-size: 5vh;
+        color: var(--BorderColour);
+
+        text-align: center;
+    }
+
+
+
+
+    /* ##### ABOUT SECTION ##### */
+    #AboutPage{
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    /* About Logo */
+    #AboutLogoContainer{
+        display: none;
+    }
+
+
+    /* About Information */
+    #AboutInformationContainer{
+        width: 85vw;
+        height: 85vh;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        transform: translateX(5%);
+    }
+
+    #AboutInformationText{
+        height: 65%;
+        width: 100%;
+    }
+
+    #AboutInformationText p{
+        font-size: 3vh;
+    }
+
+
+    /* Infographics */
+    #AboutInformationInfographics{
+        height: 25%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .AboutInfographic{
+        width: 32%;
+        height: 100%;
+    }
+
+    #AboutInfographic1 img{
+        width: 60%;
+    }
+
+    #AboutInfographic2 img, #AboutInfographic3 img{
+        width: 70%;
+    }
+
+    .AboutInfographic h3{
+        font-size: 2.5vh;
+    }
+
+
+
+
+    /*### THE PRODUCT PAGE ###*/
+    /* The Product Center Content */
+    #TheProductPageCenterContent{
+        height: 100%;
+        width: 90%;
+
+        transform: translateY(5%);
+    }
+
+    #NutriPodProductPreview{
+        height: 65%;
+        width: 100%;
+
+        margin-bottom: 5%;
+
+        background-color: var(--BGColour);
+
+        border-radius: 50px;
+        border-style: solid;
+        border-color: var(--BorderColour);
+        border-width: 8px;
+    }
+
+
+    /* The Product Drop-Up Boxes */
+    .ProductDropUpBox{
+        display: none;
+    }
+
+    
+
+
+    /*### FOOTER ###*/
+    footer{
+        height: 100vh;
+
+        position: relative;
+
+        flex-direction: column;
+        justify-content: end;
+    }
+
+
+    /* Footer Input Form */
+    .FooterLeftInputContainer{
+        height: 42%;
+        width: 85%;
+
+        margin-left: 0%;
+    }
+
+    #ContactSubmit{
+        height: 14%;
+        width: 30%;
+
+        border-radius: 8px;
+        border-width: 2px;
+    }
+
+
+    /* Footer Title */
+    #FooterTitleContainer{
+        height: 10%;
+
+        top: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    /* Footer Social Media */
+    .FooterSocialMediaContainer{
+        height: 42%;
+        width: 85%;
+    }
+
+    #FooterSocialMediaLogo{
+        height: 50%;
+    }
+
+    #FooterSocialMediaLinks{
+        width: 100%;
+        height: 30%;
+
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 5%;
+    }
+
+
+
+
+    /*### INSPECT PAGE ###*/
+    #InspectTitleContainer{
+        width: 30%;
+
+        position: absolute;
+
+        bottom: 5%;
+        left: 40%;
+        transform: translateX(-50%);
+    }
+
+    #NutriPodInspectContainer{
+        height: 70%;
+        width: 80%;
+
+        top: 10%;
+    }
+
+
+
+
+    /*### CUSTOMISE PAGE ###*/
+    #CustomizePage{
+        flex-direction: column;
+    }
+
+    #CustomizeTitleContainer{
+        width: 35%;
+        
+        left: 40%;
+        transform: translateX(-50%);
+        bottom: 5%;
+    }
+
+    /* Cutomize Preview */
+    #NutriPodCustomizePreview{
+        height: 55%;
+        width: 100%;
+
+        position: absolute;
+
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5%;
+    }
+
+    #NutriPodCustomizePreview img{
+        position: absolute;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    /* Customize Selections */
+    #CustomVerticalDivider{
+        display: none;
+    }
+
+    #NutriPodCustomizationButtons{
+        height: 15%;
+        width: 100%;
+
+        position: absolute;
+
+        right: 0%;
+        bottom: 22%;
+
+        flex-direction: column;
+    }
+
+    #CustomizationButtonsContainer{
+        height: 80%;
+        width: 90%;
+
+        transform: translateX(0%);
+
+        flex-direction: row;
+    }
+
+    .ColourButton{
+        width: 22%;
+        height: 100%;
+
+        border-width: 4px;
+    }
+
+    .ColourButton h4{
+        font-size: 3.8vh;
+    }
+
+
+
+
+    /*### ORDER PAGE ###*/
+    #OrderPageContent{
+        height: 80%;
+        width: 100%;
+        
+        flex-direction: column;
+    }
+
+    #PurchaseDivider{
+        display: none;
+    }
+
+    .PurchaseContent{
+        position: relative;
+
+        height: 50%;
+        width: 90%;
+    }
+
+    #PurchaseTitleContainer{
+        position: absolute;
+
+        bottom: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    /* Left Content */
+    #NutriPodPurchasePreview{
+        height: 85%;
+    }
+
+    #OrderOnlineButton{
+        transform: translateY(70%);
+    }
+
+
+    /* Right Content */
+    #NutriLocationImageContainer{
+        height: 45%;
+    }
+}
